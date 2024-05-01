@@ -29,7 +29,20 @@ document.addEventListener("DOMContentLoaded", function() {
             var bmi = calculateBMI(height, weight);
             document.querySelector('.calculator_form_result_info p').textContent = 'Your BMI...';
             document.querySelector('.calculator_form_result_info span').textContent = bmi;
-            document.querySelector('.calculator_form_result_description p').textContent = (bmi >= 18.5 && bmi <= 24.9) ? 'Your BMI suggests you’re a healthy weight.' : 'Your BMI suggests you’re NOT healthy weight.';
+            var resultDescription = document.querySelector('.calculator_form_result_description p');
+
+            if(bmi < 18.5){
+                resultDescription.textContent = 'You are underweight. You should consider gaining weight.';
+            }
+            else if(bmi >= 18.5 && bmi <= 24.9){
+                resultDescription.textContent =  'You are normal weight. Keep up the good work!';
+            }
+            else if(bmi >= 25 && bmi <= 29.9){
+                resultDescription.textContent = 'You are overweight. You should consider losing weight.';
+            }else{
+                resultDescription.textContent = 'You are obese. You should consider losing weight.';
+            }
+
         } 
     }
 
