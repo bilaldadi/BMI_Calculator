@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://bmi-calculator-six-rouge.vercel.app/)
+- Live Site URL: https://bmi-calculator-six-rouge.vercel.app/
 
 ## My process
 
