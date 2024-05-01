@@ -1,0 +1,660 @@
+.container {
+    position: relative
+}
+
+.container:before {
+    content: "";
+    background-image: linear-gradient(to right bottom, #ffffff, #fafaff, #f4f5ff, #ecf0ff, #e4ecff, #dfecff, #d9edff, #d4edff, #d3f1ff, #d3f5ff, #d4f9ff, #d6fcfe);
+    border-radius: 0 0 2rem 2rem;
+    position: absolute;
+    width: 100%;
+    height: 45rem;
+    z-index: -1
+}
+
+@media screen and (min-width:980px) {
+    .container:before {
+        margin-left: 29px;
+        width: 65%;
+        height: 46rem
+    }
+}
+
+.header {
+    text-align: center;
+    padding-top: 32px;
+    max-width: 70rem;
+    margin-inline: auto
+}
+
+@media screen and (min-width:980px) {
+    .header {
+        text-align: initial;
+        padding-top: 64px;
+        
+    }
+}
+
+.logo{
+    width: 12%;
+    height: auto;
+    
+}
+
+@media screen and (min-width:980px) {
+    .logo {
+        width: 7%;
+        
+    }
+}
+
+.main_container {
+    width: 90%;
+    max-width: 70rem;
+    margin-inline: auto
+}
+
+@media screen and (min-width:980px) {
+    .main_container {
+        display: flex;
+        justify-content: space-between
+    }
+}
+
+.main_intro {
+    text-align: center
+}
+
+@media screen and (min-width:980px) {
+    .main_intro {
+        text-align: initial;
+        max-width: 29rem;
+        padding-top: 4rem
+    }
+}
+
+.calculator_form {
+    border-radius: 1rem;
+    background: var(--pure-white);
+    padding: 24px;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-shadow: 12px 22px 45px 0 rgb(143, 174, 207,0.5);
+}
+
+.calculator_form h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -.075rem;
+    margin-bottom: 0
+}
+
+@media screen and (min-width:650px) {
+    .calculator_form {
+        margin-top: 4rem;
+        gap: 32px;
+        padding: 32px
+    }
+}
+
+@media screen and (min-width:980px) {
+    .calculator_form {
+        margin-top: 0;
+        max-width: 35rem
+    }
+}
+
+.calculator_form_units {
+    display: flex;
+    align-items: center;
+    justify-content:initial;
+    gap: 7rem;
+}
+
+.calculator_form_units_readio {
+    display: flex;
+    align-items: center;
+    
+}
+
+.calculator_form_units_readio label {
+    color: var(--gunmetal);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 150%
+}
+
+.calculator_form_units_readio input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--borders);
+    cursor: pointer;
+    transition: all .3s ease-in
+}
+
+.calculator_form_units_readio input:hover {
+    border: 1px solid var(--blue)
+}
+
+.calculator_form_units_readio input:checked {
+    position: relative;
+    background-color: var(--borders)
+}
+
+.calculator_form_units_readio input:checked:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--blue)
+}
+
+
+.calculator_form_values {
+    display: flex;
+    flex-direction: row;
+    gap: 16px
+}
+
+@media screen and (min-width:650px) {
+    .calculator_form_values {
+        gap: 24px;
+        flex-direction: row
+    }
+    
+}
+
+.calculator_form_values_label {
+    display: flex;
+    flex-direction: column
+}
+
+.calculator_form_values_label label {
+    color: var(--dark-electric-blue);
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 10px
+}
+
+
+.calculator_form_values_input {
+    border-radius: .75rem;
+    border: 1px solid var(--borders);
+    background: var(--pure-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: auto
+}
+
+.calculator_form_values_input:hover {
+    border: 1px solid var(--blue)
+}
+
+.calculator_form_values_input input {
+    border: none;
+    color: var(--gunmetal);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -.075rem;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border-radius: .75rem;
+    cursor: pointer
+}
+
+.calculator_form_values_input input::placeholder {
+    color: var(--gunmetal);
+    opacity: .25;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -.075rem
+}
+
+.calculator_form_values_input input:active,
+.calculator_form_values_input input:focus {
+    outline: 1px solid var(--blue)
+}
+
+.calculator_form_values_input input::-webkit-inner-spin-button,
+.calculator_form_values_input input::-webkit-outer-spin-button {
+    display: none
+}
+
+.calculator_form_values_input span {
+    color: var(--blue);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -.075rem;
+    position: absolute;
+    right: 1.5rem
+}
+
+.calculator_form_result {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: var(--blue);
+    padding: 32px;
+    color: var(--pure-white)
+}
+
+@media screen and (min-width:650px) {
+    .calculator_form_result {
+        border-top-right-radius: 62.5rem;
+        border-bottom-right-radius: 62.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center
+    }
+}
+
+.calculator_form_result_info p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 150%
+}
+
+.calculator_form_result_info span {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 110%;
+    margin-bottom: 24px;
+    margin-top: 8px;
+    display: block
+}
+
+@media screen and (min-width:650px) {
+    .calculator_form_result_info span {
+        margin-bottom: 0
+    }
+}
+
+.calculator_form_result_description p {
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 150%
+}
+
+@media screen and (min-width:650px) {
+    .calculator_form_result_description p {
+        max-width: 16.5rem
+    }
+}
+
+.Metric{
+    display: block;
+
+}
+
+.Imperial{
+    display: none;
+}
+.Imperial_second_row{
+    padding-top: 1.5rem;
+}
+
+
+.description {
+    margin-block: 65px
+}
+
+.better{
+    margin-bottom: 72px;
+
+}
+
+@media screen and (min-width:650px) {
+    .description {
+        margin-block: 96px
+    }
+}
+
+@media screen and (min-width:980px) {
+    .description {
+        margin-top: 160px;
+        margin-bottom: 120px
+    }
+}
+
+.description_intro {
+    position: relative
+}
+
+@media screen and (min-width:650px) {
+    .description_intro_1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        max-width: 72.5rem;
+        margin-inline: auto
+    }
+}
+
+.description_img {
+    display: flex
+}
+
+@media screen and (min-width:650px) {
+    .description_img {
+        position: relative;
+        left: -6%
+    }
+}
+
+@media screen and (min-width:980px) {
+    .description_img {
+        position: static;
+        left: auto;
+        height: 90%;
+        width: 90%
+
+    }
+}
+
+.description_img img {
+    max-width: 100%
+}
+
+.description_infos {
+    width: 90%;
+    margin: auto
+}
+
+@media screen and (min-width:650px) {
+    .description_infos {
+        width: auto;
+        max-width: 20rem;
+        margin: initial;
+        margin-left: auto;
+        align-self: center
+    }
+}
+
+@media screen and (min-width:980px) {
+    .description_infos {
+        width: 90%;
+        max-width: 30rem;
+        position: relative
+    }
+}
+
+    .curve_img{
+        position: absolute;
+            top: -190px;
+            right: 0;
+            width: 60%;
+            height: 50%;
+        
+    }
+
+    @media screen and (max-width:980px) {
+        .curve_img {
+            display: none;
+           
+        }
+        
+    }
+
+
+.betrer_bmi {
+    padding-block: 56px;
+    margin-top: 72px;
+    background-image: linear-gradient(to right bottom, #ffffff, #fafaff, #f4f5ff, #ecf0ff, #e4ecff, #dfecff, #d9edff, #d4edff, #d3f1ff, #d3f5ff, #d4f9ff, #d6fcfe);
+}
+
+@media screen and (min-width:650px) {
+    .betrer_bmi {
+        margin-top: 96px
+    }
+}
+
+@media screen and (min-width:980px) {
+    .betrer_bmi {
+        width: 95%;
+        padding-block: 72px;
+        margin-inline: auto;
+        border-radius: 32px
+    }
+}
+
+.betrer_bmi_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 90%;
+    max-width: 72rem;
+    margin-inline: auto
+}
+
+@media screen and (min-width:980px) {
+    .betrer_bmi_1 {
+        flex-direction: row;
+        gap: 32px
+    }
+}
+
+.betrer_bmi_container img{
+    width: 20%;
+    height: auto;
+
+}
+
+
+@media screen and (max-width:980px) {
+    .betrer_bmi_container img {
+        width: 8%;
+        height: auto
+    }
+}
+
+@media screen and (max-width:650px) {
+    .betrer_bmi_container img {
+        width: 10%;
+        height: auto
+    }
+    
+}
+
+@media screen and (min-width:650px) {
+    .betrer_bmi_container {
+        display: flex;
+        gap: 40px
+    }
+}
+
+@media screen and (min-width:980px) {
+    .betrer_bmi_container {
+        flex-direction: column;
+        gap: 45px
+    }
+}
+
+@media screen and (min-width:650px) {
+    .betrer_bmi_container_info h3 {
+        margin-block: 0
+    }
+}
+
+.limit_sec {
+    margin-bottom: 96px
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec {
+        margin-bottom: 120px
+    }
+}
+
+.limit_sec_container {
+    width: 90%;
+    max-width: 72.5rem;
+    margin-inline: auto;
+    position: relative
+}
+
+.curve2{
+    position: absolute;
+    top: 15rem;
+    left: 0;
+    width: 20%;
+    height: 20%;
+
+}
+
+@media screen and (max-width:980px) {
+    .curve2 {
+        display: none
+    }
+}
+
+.limit_sec_start {
+    text-align: center
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec_start {
+        max-width: 32.25rem;
+        text-align: initial;
+        position: absolute
+    }
+}
+
+.limit_sec_start h2 {
+    margin-top: 0
+}
+
+.limit_sec_all {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: " gender" "age" "muscle" "pregnancy" "race";
+    grid-gap: 16px;
+    gap: 16px
+}
+
+@media screen and (min-width:650px) {
+    .limit_sec_all {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: " gender age" "muscle pregnancy" " race ."
+    }
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec_all {
+        margin-left: auto;
+        width: 75%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: ". gender" "age muscle" "pregnancy race";
+        row-gap: 24px;
+        column-gap: 32px
+    }
+}
+
+.limit_sec_all_1 {
+    box-shadow: 16px 32px 56px 0 rgba(143, 174, 207, .25);
+    background-color: var(--pure-white);
+    border-radius: 16px;
+    padding: 24px
+}
+
+.lim_title_container {
+    display: flex;
+    align-items: center;
+    gap: 16px
+}
+
+.lim_title_container h3 {
+    font-size: 1.25rem;
+    letter-spacing: -.0625rem
+}
+
+.limit_img{
+    width: 10%;
+    height: auto;
+
+}
+
+.limit_sec_gender {
+    grid-area: gender
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec_gender {
+        margin-right: 40px;
+        margin-left: -40px
+    }
+}
+
+.limit_sec_age {
+    grid-area: age
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec_age {
+        margin-left: auto
+    }
+}
+
+.limit_sec_muscle {
+    grid-area: muscle
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec_muscle {
+        margin-left: auto
+    }
+}
+
+.limit_sec_pregnancy {
+    grid-area: pregnancy
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec_pregnancy {
+        margin-right: 120px;
+        margin-left: -120px
+    }
+}
+
+.limit_sec_race {
+    grid-area: race
+}
+
+@media screen and (min-width:650px) {
+    .limit_sec_race {
+        margin-right: -50%;
+        margin-left: 50%
+    }
+}
+
+@media screen and (min-width:980px) {
+    .limit_sec_race {
+        margin-right: 120px;
+        margin-left: -120px
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
