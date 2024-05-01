@@ -44,3 +44,4 @@ I first started by reviewing all sections and elements in Figma, then wrote the 
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- JavaScript
